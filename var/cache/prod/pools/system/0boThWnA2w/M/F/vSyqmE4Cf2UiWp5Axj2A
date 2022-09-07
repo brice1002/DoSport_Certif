@@ -1,0 +1,102 @@
+<?php //11cc73ee943ab1115288ea5304ed9130
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'val' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT p0_.id AS id_0, p0_.name AS name_1, p0_.slug AS slug_2, p0_.subtitle AS subtitle_3, p0_.description AS description_4, p0_.price AS price_5, p0_.illustration AS illustration_6, p0_.is_best AS is_best_7, p0_.category_id AS category_id_8, p0_.genre_id AS genre_id_9, p0_.categories_vac_id AS categories_vac_id_10, p0_.id_marque_id AS id_marque_id_11 FROM product p0_ WHERE p0_.is_best = ? ORDER BY p0_.id ASC LIMIT 4',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'p' => 'App\\Entity\\Product',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'name_1' => 'name',
+                    'slug_2' => 'slug',
+                    'subtitle_3' => 'subtitle',
+                    'description_4' => 'description',
+                    'price_5' => 'price',
+                    'illustration_6' => 'illustration',
+                    'is_best_7' => 'isBest',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'category_id_8' => 'integer',
+                    'genre_id_9' => 'integer',
+                    'categories_vac_id_10' => 'integer',
+                    'id_marque_id_11' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'p' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'category_id_8' => 'category_id',
+                    'genre_id_9' => 'genre_id',
+                    'categories_vac_id_10' => 'categories_vac_id',
+                    'id_marque_id_11' => 'id_marque_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'p',
+                    'name_1' => 'p',
+                    'slug_2' => 'p',
+                    'subtitle_3' => 'p',
+                    'description_4' => 'p',
+                    'price_5' => 'p',
+                    'illustration_6' => 'p',
+                    'is_best_7' => 'p',
+                    'category_id_8' => 'p',
+                    'genre_id_9' => 'p',
+                    'categories_vac_id_10' => 'p',
+                    'id_marque_id_11' => 'p',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Product',
+                    'name_1' => 'App\\Entity\\Product',
+                    'slug_2' => 'App\\Entity\\Product',
+                    'subtitle_3' => 'App\\Entity\\Product',
+                    'description_4' => 'App\\Entity\\Product',
+                    'price_5' => 'App\\Entity\\Product',
+                    'illustration_6' => 'App\\Entity\\Product',
+                    'is_best_7' => 'App\\Entity\\Product',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,2 @@
+#!/bin/sh
+rsync -av -e 'ssh -p 22' ./ u108754538@access914851249.webspace-data.io:~/dosport --include=public/build --include=.htaccess --exclude-from=.gitignore --exclude=".*"

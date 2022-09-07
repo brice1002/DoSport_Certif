@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block carousel %}{% endblock %}
+
+{% block content %}
+
+	<!-- Three columns of text below the carousel -->
+	<div class="card-group mb-0">
+		<div
+			class="card">
+			{# <img src="..." class="card-img-top" alt="..."> #}
+			<a href="{{ path('products_category', {'category' : 1}) }}"><img class="img-fluid" src="{{asset("assets/img/img_front/box-g7266728f4_1920 (Personnalisé).jpg")}}" alt="photo homme boxeur"></a>
+			<div class="card-body">
+				<h5 class="card-title text-center">Homme</h5>
+				<p class="card-text">Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+				<p class="text-center">
+					<a class="btn btn-secondary" href="{{ path('products_category', {'category' : 1}) }}" role="button">Voir + &raquo;</a>
+				</p>
+			</div>
+		</div>
+		<div class="card">
+			<a href="{{ path('products_category', {'category' : 2}) }}"><img class="img-fluid" src="{{asset("assets/img/img_front/karate-g29e4d0e74_1920 (Personnalisé).jpg")}}" alt="photo femme boxeur"></a>
+			<div class="card-body">
+				<h5 class="card-title text-center">Femme</h5>
+				<p class="card-text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+				<p class="text-center">
+					<a class="btn btn-secondary" href="{{ path('products_category', {'category' : 2}) }}" role="button">Voir + &raquo;</a>
+				</p>
+			</div>
+		</div>
+		<div class="card">
+			<a href="{{ path('products_category', {'category' : 3}) }}"><img class="img-fluid" src="{{asset("assets/img/img_front/tennis-g42ed02b39_1920 (Personnalisé).jpg")}}" alt="photo femme boxeur"></a>
+			<div class="card-body">
+				<h5 class="card-title text-center">Enfant</h5>
+				<p class="card-text">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+				<p class="text-center">
+					<a class="btn btn-secondary" href="{{ path('products_category', {'category' : 3}) }}" role="button">Voir + &raquo;</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- les promotions -->
+
+	{# <hr class="featurette-divider"> #}
+
+	<h2 class="featurette-heading">Nos produits du moment</h2>
+
+	<div class="card-group mb-0">
+
+		{% for product in products %}
+
+			{# <pre>
+						        {{ dump(product.illustration) }}
+						    </pre> #}
+
+			<div class="card me-2 mb-5">
+				<img src="{{ asset('uploads/' ~ product.illustration) }}" class="card-img-top" alt="{{ product.name }}">
+				<div class="card-body">
+					<h5 class="card-title">{{ product.name }}</h5>
+					<p class="card-text">{{ product.description }}</p>
+					<p class="card-text">
+						<small class="text-muted">{{ product.subtitle }}</small>
+					</p>
+					{# <p class="card-text">{{ product.price }} </p> #}
+					<strong><p class="card-text">{{ (product.price / 100)|number_format(2, ',', '.') }}€</p></strong><br>
+
+					<a href="{{ path('add-to-cart', {'id' : product.id}) }}" class="btn btn-primary">Ajouter au panier</a>
+
+				</div>
+			</div>
+
+		{% endfor %}
+	</div>
+
+	{# <hr class="featurette-divider"> #}
+
+	<h2 class="featurette-heading mb-3 mt-0">Tous nos sports</h2>
+
+	<div class="row d-flex justify-content-between mb-3">
+		<div id="sportCo" class="col-md-3 text-container img-fluid me-2">
+			<span>
+				<h1>Sports collectifs</h1>
+			</span>
+		</div>
+		<div id="muscuFit" class="col-md-3 text-container img-fluid me-2">
+			<span>
+				<h1>Musculation & Fitness</h1>
+			</span>
+		</div>
+		<div id="sportComb" class="col-md-3 text-container img-fluid">
+			<span>
+				<h1>Sports de combat</h1>
+			</span>
+		</div>
+	</div>
+	<div class="row d-flex justify-content-between">
+		<div id="raquette" class="col-md-3 text-container img-fluid me-2">
+			<span>
+				<h1>Sports de raquette</h1>
+			</span>
+		</div>
+		<div id="equitation" class="col-md-3 text-container img-fluid me-2">
+			<span>
+				<h1>Equitation</h1>
+			</span>
+		</div>
+		<div id="aquatique" class="col-md-3 text-container img-fluid">
+			<span>
+				<h1>Sport aquatique</h1>
+			</span>
+		</div>
+	</div>
+
+
+	{# <section id="slider">
+		<img class="img-fluid" src="{{ asset('assets/img/img_sports/equitation.jpg') }}" alt="slider"/>
+		<div id="conteneur_slider">
+		 
+		<h1>WEBAGENCY:L'AGENCE DE TOUS </br> VOS PROJETS! </h1>
+		<p>Vous avez un projet web ? La WebAgency vous aide à le réaliser! </p>
+		<a href="#">Plus d'infos</a>
+		</div>
+		</section> #}
+
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">First featurette heading.
+				<span class="text-muted">It’ll blow your mind.</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5">
+			<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+				<title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+			</svg>
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7 order-md-2">
+			<h2 class="featurette-heading">Oh yeah, it’s that good.
+				<span class="text-muted">See for yourself.</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5 order-md-1">
+			<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+				<title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+			</svg>
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">And lastly, this one.
+				<span class="text-muted">Checkmate.</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5">
+			<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveaspectratio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500">
+				<title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+			</svg>
+		</div>
+	</div>
+
+	<hr class="featurette-divider">
+
+<!-- /END THE FEATURETTES -->
+
+
+{% endblock %}

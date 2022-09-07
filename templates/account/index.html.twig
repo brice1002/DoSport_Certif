@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte - Do Sport{% endblock %}
+
+{% block content %}
+
+    <h1>Mon compte</h1>
+
+    {# <pre>
+    {{ dump(app.user) }}
+</pre> #}
+
+    {# {% if notification %}
+        <div class="alert alert-info"> {{ notification }} </div>
+        <hr>
+    {% endif %} #}
+
+
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+    <!-- affichage du flashMessage si il existe -->
+    {# {% for couleurbootstrap, messages in app.flashes(['success', 'danger', 'info', 'warning']) %}
+        {% for message in messages %}
+        <div class="alert alert-{{ couleurbootstrap }}">{{ message }}</div>
+        {% endfor %}
+    {% endfor %} #}
+
+    Bienvenue {{ app.user.firstname }} dans votre espace. <br/> C'est ici que vous pourrez gérer toutes vos informations personnelles. <br>
+
+    <hr>
+
+    {% if is_granted('ROLE_ADMIN') %}
+
+    <a href="{{ path('admin') }}">Accéder au backoffice</a> <br/>
+    {% endif %}
+    <a href="{{ path('account_password') }}">Modifier mon mot de passe</a> <br/>
+    <a href="{{ path('account_address') }}">Gérer mes adresses</a> <br/>
+    <a href="{{ path('account_order') }}">Mes commandes</a> <br/>
+
+    <hr>
+{# <pre>
+    {{ dump(app.user.firstname) }}
+</pre> #}
+{% endblock %}

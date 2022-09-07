@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page introuvable - DoSport{% endblock %}
+
+{% block content %}
+
+    <div class="block-small">
+        <h2>Page introuvable</h2>
+        <img src="{{ asset('assets/img/DoSport_Logo.png') }}" alt="logo DoSport">
+        <p>Nous sommes navrés, cette page ne semble pas être accessible pour le moment</p>
+        <a href="{{ path('home') }}" class="btn btn-info">Accueil</a>
+    
+    </div>
+
+{% endblock %}

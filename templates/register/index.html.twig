@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    {# <div class="container">
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-dismissible alert-{{ type }}">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button> #}
+                    {# <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again. #}
+                    {# <h4 class="alert-heading">{{ type|capitalize }}</h4>
+                    <p>{{ message }} </p>
+                </div> #}
+            {# {% endfor %}
+        {% endfor %}
+    </div> #}
+
+    {# <pre>
+        {{ dump(app) }}
+    </pre> #}
+
+    <h1>Inscription</h1>
+
+    {# {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %} #}
+
+    <!-- affichage du flashMessage si il existe -->
+    {# {% for couleurbootstrap, messages in app.flashes(['success', 'danger', 'info', 'warning']) %}
+        {% for message in messages %}
+        <div class="alert alert-{{ couleurbootstrap }}">{{ message }}</div>
+        {% endfor %}
+    {% endfor %} #}
+
+    {# {% if notification %}
+        <div class="alert alert-info"> {{ notification }} </div>
+        <hr>
+    {% endif %} #}
+
+    {{ form(form) }}
+{% endblock %}

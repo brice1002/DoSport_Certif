@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos produits - Do Sport
+{% endblock %}
+
+{% block content %}
+
+	<div class="container-fluid mt-5">
+		{% if products[0].category.id == '1' %}
+			<h2 class="card-title">Nos produits pour hommes</h2>
+		{% elseif products[0].category.id == '2' %}
+			<h2 class="card-title">Nos produits pour femmes</h2>
+		{% elseif products[0].category.id == '3' %}
+			<h2 class="card-title">Nos produits pour enfants</h2>
+		{% endif %}
+
+		<div class="row">
+			<div class="col-md-4 ">
+				<div class="card">
+					<img src="{{ asset('assets/img/img_VAC/leslie-jones-urBiLDuUhMU-unsplash.jpg') }}" alt="Image vêtement">
+					<div class="card-body">
+
+						{% if products[0].category.id == '1' %}
+							<h5 class="card-title">Vêtements hommes</h5>
+						{% elseif products[0].category.id == '2' %}
+							<h5 class="card-title">Vêtements femmes</h5>
+						{% elseif products[0].category.id == '3' %}
+							<h5 class="card-title">Vêtements enfants</h5>
+						{% endif %}
+
+						{# <h5 class="card-title">Vêtements</h5> #}
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab velit sunt perspiciatis!</p>
+						{# <a href="{{ path('products_categoryVAC', {'category': products[0].category.id, 'categoryVAC' : products[0].categoryVAC.id }) }}" class="btn btn-primary">En savoir +</a> #}
+						<a href="{{ path('products_categoryVAC', {'category' : products[0].category.id, 'categoryVAC' : 1} ) }}" class="btn btn-primary">En savoir +</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 ">
+				<div class="card">
+					<img src="{{ asset('assets/img/img_VAC/luis-felipe-lins-LG88A2XgIXY-unsplash.jpg') }}" alt="Image chaussure">
+					<div class="card-body">
+						{% if products[0].category.id == '1' %}
+							<h5 class="card-title">Chaussures hommes</h5>
+						{% elseif products[0].category.id == '2' %}
+							<h5 class="card-title">Chaussures femmes</h5>
+						{% elseif products[0].category.id == '3' %}
+							<h5 class="card-title">Chaussures enfants</h5>
+						{% endif %}
+						<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta iste maxime voluptatum.</p>
+						<a href="{{ path('products_categoryVAC', {'category' : products[0].category.id, 'categoryVAC' : 3} ) }}" class="btn btn-primary">En savoir +</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 ">
+				<div class="card">
+					<img src="{{ asset('assets/img/img_VAC/onur-binay-4401uqU9bf8-unsplash.jpg') }}" alt="Image accessoire">
+					<div class="card-body">
+						{% if products[0].category.id == '1' %}
+							<h5 class="card-title">Accessoires hommes</h5>
+						{% elseif products[0].category.id == '2' %}
+							<h5 class="card-title">Accessoires femmes</h5>
+						{% elseif products[0].category.id == '3' %}
+							<h5 class="card-title">Accessoires enfants</h5>
+						{% endif %}
+						<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas adipisci quas.</p>
+						<a href="{{ path('products_categoryVAC', {'category' : products[0].category.id, 'categoryVAC' : 2} ) }}" class="btn btn-primary">En savoir +</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

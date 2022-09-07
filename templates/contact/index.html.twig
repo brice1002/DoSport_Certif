@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - DoSport{% endblock %}
+
+{% block content %}
+<h2 class="mt-5">Nous contacter</h2>
+
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success">{{  message }}</div>
+{% endfor %}
+
+<div class="example-wrapper">
+    <div class="row">
+        <div class="col-md-8">
+            {{ form(form) }}
+        </div>
+        <div class="col-md-4">
+            <strong>DoSport</strong>
+        </div>
+    </div>
+</div>
+{% endblock %}
